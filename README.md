@@ -34,7 +34,7 @@ docker run -d --name book-catalog-service --net host --restart unless-stopped eb
 ### Step 3: Deploy the Book Catalog Management Service
 * Navigate to the bookcatalog-management-service directory:
 ```
-cd bookcatalog
+cd bookcatalog-management-service
 ```
 * Build the Docker image using the Dockerfile located in the directory:
 
