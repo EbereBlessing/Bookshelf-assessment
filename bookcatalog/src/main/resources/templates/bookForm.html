@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add/Edit Book</title>
+    <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+<body>
+<div class="form-container">
+    <h1 th:text="${book.id == null ? 'Add New Book' : 'Edit Book'}"></h1>
+    <form th:action="@{/book/save}" th:object="${book}" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}" required />
+
+        <label for="isbn">ISBN:</label>
+        <input type="text" id="isbn" th:field="*{isbn}" required />
+
+        <label for="publishDate">Publish Date:</label>
+        <input type="date" id="publishDate" th:field="*{publishDate}" required />
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" th:field="*{price}" step="0.01" required />
+
+        <label for="bookType">Book Type:</label>
+        <select id="bookType" th:field="*{bookType}">
+            <option value="Hard Cover">Hard Cover</option>
+            <option value="Soft Cover">Soft Cover</option>
+            <option value="eBook">eBook</option>
+        </select>
+
+        <button type="submit">Save</button>
+    </form>
+    <a href="/books">Back to List</a>
+</div>
+</body>
+</html>
