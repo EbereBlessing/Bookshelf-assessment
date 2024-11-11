@@ -1,0 +1,36 @@
+/* Basic styles for the error page */
+.error-container {
+    text-align: center;
+    padding: 50px;
+    margin-top: 50px;
+    border: 2px solid #d9534f;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: auto;
+    background-color: #f9f9f9;
+}
+
+.error-container h1 {
+    color: #d9534f;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.error-container p {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.error-container .back-home {
+    color: #fff;
+    text-decoration: none;
+    background-color: #5bc0de;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.error-container .back-home:hover {
+    background-color: #31b0d5;
+}

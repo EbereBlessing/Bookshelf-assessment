@@ -11,26 +11,23 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.GenericType;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 
 @Service
 public class ManagementServiceClient {
 
+
     private final Client client;
     private final WebTarget baseTarget;
 
-    public ManagementServiceClient() {
+    public ManagementServiceClient(@Value("${management.service.url}") String baseUrl) {
         this.client = ClientBuilder.newClient();
-        this.baseTarget = client.target("http://localhost:8081/api/books");
+        this.baseTarget = client.target(baseUrl);
     }
 
-//    public List<Book> getAllBooks() {
-//        Response response = baseTarget.request(MediaType.APPLICATION_JSON).get();
-//        List<Book> books = response.readEntity(new GenericType<List<Book>>() {});
-//        response.close();
-//        return books;
-//    }
 
     public List<Book> getAllBooks() {
         Response response = baseTarget.request()
@@ -43,7 +40,7 @@ public class ManagementServiceClient {
                 return response.readEntity(new GenericType<List<Book>>() {});
             } catch (Exception e) {
                 e.printStackTrace();
-                throw new RuntimeException("Failed to parse the response to List<Book>", e);
+                throw new RuntimeException("Failed to parse the response", e);
             } finally {
                 response.close();
             }
@@ -74,7 +71,7 @@ public class ManagementServiceClient {
     }
 
     public void deleteBook(int id) {
-        baseTarget.path(String.valueOf(id)).request().delete();
+        baseTarget.path(String.valueOf(id)).request(MediaType.APPLICATION_JSON).delete();
     }
 
     public void close() {

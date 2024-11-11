@@ -8,10 +8,8 @@ import org.springframework.stereotype.Controller;
 
 import org.springframework.ui.Model;
 import javax.annotation.PreDestroy;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,20 +30,13 @@ public class BookController {
     @GetMapping("/book/form/new")
     public String showBookForm(Model model) {
         model.addAttribute("book", new Book());
-        System.out.println("Im in books");
         return "bookForm";
     }
 
-
-
-
     @GetMapping("/books")
     public String getBooks(Model model) {
-
         List<Book> books = managementServiceClient.getAllBooks();
-        log.info("Books found: {}", books);
         model.addAttribute("books", books);
-        log.info("Next line");
         return "bookList";
     }
 
@@ -75,7 +66,7 @@ public class BookController {
         return "bookForm";
     }
 
-    @PostMapping("/book/delete/{id}")
+    @GetMapping("/book/delete/{id}")
     public String deleteBook(@PathVariable("id") int id) {
         managementServiceClient.deleteBook(id);
         return "redirect:/books";

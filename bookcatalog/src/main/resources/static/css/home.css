@@ -2,7 +2,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f3f4f7;
+    background-color: #f1f8e9;
     color: #333;
     display: flex;
     align-items: center;
@@ -21,7 +21,7 @@ body {
 
 h1 {
     font-size: 2.5rem;
-    color: #2c3e50;
+    color: #388e3c;
     margin-bottom: 1rem;
 }
 
@@ -38,7 +38,7 @@ p {
 }
 
 .btn {
-    background-color: #2c3e50;
+    background-color: #66bb6a;
     color: #fff;
     padding: 0.8rem 1.5rem;
     text-decoration: none;
@@ -48,5 +48,5 @@ p {
 }
 
 .btn:hover {
-    background-color: #1a242f;
+    background-color: #43a047;
 }
