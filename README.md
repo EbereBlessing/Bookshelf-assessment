@@ -52,4 +52,4 @@ docker run -d --name book-catalog-management-service --net host --restart unless
 ```
 docker run -d --name book-catalog-management-service --net host --restart unless-stopped ebereblessing/book-catalog-management-service:latest
 ```
-* You have the option to change the repository name and push the image to a different repository to make it accessible to other team members or build it locally for personal use.
+* You have the option to change the repository name and push the image to a different repository to make it accessible to other team members or build it locally for personal use.....
