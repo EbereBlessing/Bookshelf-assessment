@@ -1,7 +1,7 @@
 # Bookshelf Assessment - Coding Challenge
 ## Prerequisites
 Docker installed on your system.
-### Step 1: Docker Installation (if required)
+### Step 1: Docker Installation (if required).
 If you're using Ubuntu, you can install Docker and its dependencies by running the provided bash.sh script in the working directory. For other operating systems, please refer to the official Docker documentation for installation instructions.
 ```
 chmod 777 bash.sh
