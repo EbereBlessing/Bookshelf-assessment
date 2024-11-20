@@ -1,4 +1,4 @@
-# Bookshelf Assessment - Coding Challenge
+# Bookshelf Assessment - Coding Challenge.
 ## Prerequisites
 Docker installed on your system.
 ### Step 1: Docker Installation (if required).
