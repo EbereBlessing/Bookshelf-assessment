@@ -1,9 +1,0 @@
-# Buildspec.yml for AWS Codebuild...
-Version: 0.2
-
-phases:
-  build:
-    commands:
-       - "aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 370416136397.dkr.ecr.us-east-1.amazonaws.com  && docker build -t applicaion/bookshel ./bookcatalog-management-service/  && docker tag applicaion/bookshel:latest 370416136397.dkr.ecr.us-east-1.amazonaws.com/applicaion/bookshel:latest && docker push 370416136397.dkr.ecr.us-east-1.amazonaws.com/applicaion/bookshel:latest"
-      
-        
