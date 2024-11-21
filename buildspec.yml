@@ -1,4 +1,4 @@
-# Buildspec.yml
+# Buildspec.yml for AWS Codebuild
 Version: 0.2
 
 phases:
